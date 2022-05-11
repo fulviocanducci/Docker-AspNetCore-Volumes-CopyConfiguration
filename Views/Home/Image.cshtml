@@ -1,0 +1,17 @@
+@model List<string>
+@{
+    ViewData["Title"] = "Home Page";    
+}
+
+<div class="text-center">
+    <form asp-controller="Home" asp-action="Image" method="post" enctype="multipart/form-data">
+        <input type="file" name="Photo" id="Photo" />
+        <button type="submit">Enviar</button>
+    </form>
+    <div>
+    @foreach (string item in Model)
+    {
+        <img src="/public/@item" width="100px" style="width: 100px;"/>
+    }
+    </div>
+</div>
